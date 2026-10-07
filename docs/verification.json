@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-07T02:06:50.339526+00:00",
+  "application_tests": 45,
+  "browser": {
+    "engine": "Codex in-app Chromium",
+    "widths": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "views": [
+      "portfolio",
+      "asset detail",
+      "snapshot data room",
+      "documents",
+      "brief register",
+      "populated brief",
+      "actions",
+      "activity"
+    ],
+    "layout_checks": 32,
+    "page_overflows": 0,
+    "console_errors": 0,
+    "workflows": [
+      "invalid workbook rejected without publication",
+      "valid workbook staged by analyst and published by reviewer",
+      "real Ollama draft rendered with exact source passages",
+      "independent brief approval",
+      "create and update assigned action",
+      "downside sensitivity changes NOI and coverage",
+      "feedback saved and shown in activity"
+    ]
+  },
+  "container": {
+    "image": "portfolio-brickline:1.0",
+    "user": "10001",
+    "health": "ok",
+    "portfolio_assets": 6
+  },
+  "limits": "Local synthetic workflow verification; no cloud deployment or measured business adoption."
+}

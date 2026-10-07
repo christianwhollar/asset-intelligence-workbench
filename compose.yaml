@@ -1,0 +1,19 @@
+services:
+  brickline:
+    build: .
+    ports:
+      - "127.0.0.1:8106:8106"
+    environment:
+      BRICKLINE_DEMO: "1"
+      BRICKLINE_DB: /data/brickline.db
+    volumes:
+      - brickline-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  brickline-data:

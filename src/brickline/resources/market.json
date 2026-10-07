@@ -1,0 +1,96 @@
+{
+  "series": "DGS10",
+  "title": "10-year U.S. Treasury constant maturity yield",
+  "units": "Percent, daily; not seasonally adjusted",
+  "source": "Board of Governors of the Federal Reserve System via FRED, Federal Reserve Bank of St. Louis",
+  "source_url": "https://fred.stlouisfed.org/series/DGS10",
+  "download_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2025-09-01&coed=2025-09-30",
+  "retrieved_at": "2026-10-07T01:49:16.554997+00:00",
+  "sha256": "526e15933476c3b647d855e52afdef7d6fcf90b308e5940b012a3ed7d85370aa",
+  "observations": [
+    {
+      "date": "2025-09-02",
+      "value": 4.28
+    },
+    {
+      "date": "2025-09-03",
+      "value": 4.22
+    },
+    {
+      "date": "2025-09-04",
+      "value": 4.17
+    },
+    {
+      "date": "2025-09-05",
+      "value": 4.1
+    },
+    {
+      "date": "2025-09-08",
+      "value": 4.05
+    },
+    {
+      "date": "2025-09-09",
+      "value": 4.08
+    },
+    {
+      "date": "2025-09-10",
+      "value": 4.04
+    },
+    {
+      "date": "2025-09-11",
+      "value": 4.01
+    },
+    {
+      "date": "2025-09-12",
+      "value": 4.06
+    },
+    {
+      "date": "2025-09-15",
+      "value": 4.05
+    },
+    {
+      "date": "2025-09-16",
+      "value": 4.04
+    },
+    {
+      "date": "2025-09-17",
+      "value": 4.06
+    },
+    {
+      "date": "2025-09-18",
+      "value": 4.11
+    },
+    {
+      "date": "2025-09-19",
+      "value": 4.14
+    },
+    {
+      "date": "2025-09-22",
+      "value": 4.15
+    },
+    {
+      "date": "2025-09-23",
+      "value": 4.12
+    },
+    {
+      "date": "2025-09-24",
+      "value": 4.16
+    },
+    {
+      "date": "2025-09-25",
+      "value": 4.18
+    },
+    {
+      "date": "2025-09-26",
+      "value": 4.2
+    },
+    {
+      "date": "2025-09-29",
+      "value": 4.15
+    },
+    {
+      "date": "2025-09-30",
+      "value": 4.16
+    }
+  ]
+}

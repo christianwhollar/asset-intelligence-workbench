@@ -1,0 +1,36 @@
+name: checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  application:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -c constraints.txt -e '.[dev]'
+      - run: ruff check src tests scripts
+      - run: pytest -q
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/brickline/web/app.js
+      - run: python scripts/evaluate.py --output runtime/ci-study
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t brickline:test .
+      - run: |
+          docker run -d --name brickline-check -e BRICKLINE_DEMO=1 -p 127.0.0.1:18106:8106 brickline:test
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:18106/health; then break; fi
+            sleep 1
+          done
+          curl --fail --silent -H 'X-API-Key: demo-analyst' http://127.0.0.1:18106/api/portfolio > /tmp/portfolio.json
+          python -c 'import json; p=json.load(open("/tmp/portfolio.json")); assert len(p["assets"]) == 6'
+      - if: always()
+        run: docker logs brickline-check; docker rm -f brickline-check || true

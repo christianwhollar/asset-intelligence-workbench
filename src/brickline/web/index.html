@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#203f34" />
+    <title>Brickline · Asset intelligence</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23203f34' d='M4 4h14v10h10v14H4z'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to workspace</a>
+    <header>
+      <a href="/" class="brand" aria-label="Brickline home"
+        ><svg viewBox="0 0 36 36" aria-hidden="true">
+          <path d="M3 3h17v11h13v19H3z" fill="currentColor" />
+          <path
+            d="M10 10h3v4h-3zm0 10h3v6h-3zm10 0h6v6h-6z"
+            fill="#dce7cb"
+          /></svg
+        ><span
+          >brickline<span class="brand-sub">ASSET INTELLIGENCE</span></span
+        ></a
+      >
+      <div class="account">
+        <span class="pill">SYNTHETIC PORTFOLIO</span
+        ><label for="identity" class="sr-only">Demo identity</label
+        ><select id="identity">
+          <option value="demo-analyst">Northline · Analyst</option>
+          <option value="demo-reviewer">Northline · Reviewer</option>
+          <option value="demo-other">Other portfolio · Analyst</option>
+          <option value="custom">Configured API key</option></select
+        ><button class="quiet" id="keyButton">Connect</button>
+      </div>
+    </header>
+    <div id="login" hidden>
+      <label
+        >API key <input id="apiKey" type="password" autocomplete="off" /></label
+      ><button id="saveKey">Use key for this session</button>
+    </div>
+    <div class="nav-wrap">
+      <nav aria-label="Workspace">
+        <button data-page="portfolio" aria-current="page">
+          01 <span>Portfolio</span></button
+        ><button data-page="data">02 <span>Data room</span></button
+        ><button data-page="briefs">03 <span>Review briefs</span></button
+        ><button data-page="actions">04 <span>Action register</span></button
+        ><button data-page="activity">05 <span>Activity</span></button>
+      </nav>
+      <span id="session" class="small"></span>
+    </div>
+    <main id="main" tabindex="-1">
+      <div class="loading">Loading your workspace…</div>
+    </main>
+    <footer>
+      <span>Independent portfolio reference implementation</span
+      ><span
+        >Fictional assets · Historical snapshot · Human review required</span
+      >
+    </footer>
+    <div id="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>
